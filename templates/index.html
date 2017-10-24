@@ -1,0 +1,300 @@
+﻿{% extends 'base.html' %}
+
+{% block body %}
+    <body>
+    <div id="header">
+        <div class="container-fluid">
+            <div class="navbar">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <i class="im-windows8 text-logo-element animated bounceIn"></i>
+                        <span class="text-logo">spr</span><span class="text-slogan">crm</span>
+                    </a>
+                </div>
+                <nav class="top-nav" role="navigation">
+                    <ul class="nav navbar-nav pull-left">
+                        <li id="toggle-sidebar-li">
+                            <a href="#" id="toggle-sidebar"><i class="en-arrow-left2"></i>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown"><i class="ec-cog"></i><span
+                                    class="notification">10</span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#"><i class="st-users"></i> 用户 <span
+                                        class="notification orange">2k</span></a>
+                                </li>
+                                <li><a href="#"><i class="st-bag"></i> 订单 <span
+                                        class="notification purple">12</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown">
+                                <i class="br-alarm"></i><span class="notification">5</span>
+                            </a>
+                            <ul class="dropdown-menu notification-menu right" role="menu">
+                                <li class="clearfix">
+                                    <i class="ec-chat"></i>
+                                    <a href="#" class="notification-user"> 不言 </a>
+                                    <span class="notification-action"> 回复了你的 </span>
+                                    <a href="#" class="notification-link"> 评论</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown">
+                                <img class="user-avatar" src="/static/img/avatars/48.jpg" alt="SuggeElson">不言</a>
+                            <ul class="dropdown-menu right" role="menu">
+                                <li><a href="profile.html"><i class="st-user"></i> 个人信息</a>
+                                </li>
+                                <li><a href="#"><i class="st-settings"></i> 设置</a>
+                                </li>
+                                <li><a href="login.html"><i class="im-exit"></i> 注销</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="sidebar">
+        <div class="sidebar-inner">
+            <!-- 侧边栏菜单 -->
+            <ul id="sideNav" class="nav nav-pills nav-stacked">
+                <li class="top-search">
+                    <form>
+                        <input type="text" name="search" placeholder="Search ...">
+                        <button type="submit"><i class="ec-search s20"></i>
+                        </button>
+                    </form>
+                </li>
+                <li><a href="/">Dashboard <i class="im-screen"></i></a>
+                </li>
+                <li><a href="/customer">客户管理 <i class="st-chart"></i></a>
+                </li>
+                <li>
+                    <a href="#"> 权限管理 <i class="im-paragraph-justify"></i></a>
+                    <ul class="nav sub">
+                        <li><a href="/role"><i class="ec-user"></i> 角色管理</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- 侧边栏面板 -->
+            <div class="sidebar-panel">
+                <h4 class="sidebar-panel-title"><i class="im-fire"></i> 服务器使用</h4>
+                <div class="sidebar-panel-content">
+                    <ul class="server-stats">
+                        <li>
+                            <span class="txt">硬盘空间</span>
+                            <span class="percent">78</span>
+                            <div id="usage-sparkline" class="sparkline">Loading...</div>
+                            <div class="pie-chart" data-percent="78"></div>
+                        </li>
+                    </ul>
+                    <ul class="server-stats">
+                        <li>
+                            <span class="txt">CPU消耗</span>
+                            <span class="percent">56</span>
+                            <div id="cpu-sparkline" class="sparkline">Loading...</div>
+                            <div class="pie-chart" data-percent="56"></div>
+                        </li>
+                    </ul>
+                    <ul class="server-stats">
+                        <li>
+                            <span class="txt">内存</span>
+                            <span class="percent">14</span>
+                            <div id="ram-sparkline" class="sparkline">Loading...</div>
+                            <div class="pie-chart" data-percent="14"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {% block content %}
+        <!-- 主页面 -->
+        <div id="content">
+            <div class="content-wrapper">
+                <div class="row">
+                    <!-- Start .row -->
+                    <!-- 页面顶部 -->
+                    <div class="col-lg-12 heading">
+                        <h1 class="page-header"><i class="im-screen"></i> 主页</h1>
+                        <ul id="crumb" class="breadcrumb">
+                        </ul>
+                        <div class="option-buttons">
+                            <div class="btn-toolbar" role="toolbar">
+                                <div class="btn-group">
+                                    <a id="clear-localstorage" class="btn tip" title="Reset panels position">
+                                        <i class="ec-refresh color-red s24"></i>
+                                    </a>
+                                </div>
+                                <div class="btn-group dropdown">
+                                    <a class="btn dropdown-toggle" data-toggle="dropdown" id="dropdownMenu1"><i
+                                            class="br-grid s24"></i></a>
+                                    <div class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1">
+                                        <div class="option-dropdown">
+                                            <div class="shortcut-button">
+                                                <a href="#">
+                                                    <i class="ec-images color-dark"></i>
+                                                    <span>图库</span>
+                                                </a>
+                                            </div>
+                                            <div class="shortcut-button">
+                                                <a href="#">
+                                                    <i class="ec-link color-blue"></i>
+                                                    <span>链接</span>
+                                                </a>
+                                            </div>
+                                            <div class="shortcut-button">
+                                                <a href="#">
+                                                    <i class="ec-support color-red"></i>
+                                                    <span>支持</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="outlet">
+                    <!-- 统计 -->
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="carousel-tile carousel vertical slide">
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <div class="tile red">
+                                            <div class="tile-icon">
+                                                <i class="br-cart s64"></i>
+                                            </div>
+                                            <div class="tile-content">
+                                                <div class="number">107</div>
+                                                <h3>订单</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="tile orange">
+                                            <!-- tile start here -->
+                                            <div class="tile-icon">
+                                                <i class="ec-cog s64"></i>
+                                            </div>
+                                            <div class="tile-content">
+                                                <div class="number">5</div>
+                                                <h3>设置更改</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="carousel-tile carousel slide">
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <div class="tile blue">
+                                            <div class="tile-icon">
+                                                <i class="st-chat s64"></i>
+                                            </div>
+                                            <div class="tile-content">
+                                                <div class="number">24</div>
+                                                <h3>新评论</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="tile brown">
+                                            <!-- tile start here -->
+                                            <div class="tile-icon">
+                                                <i class="ec-mail s64"></i>
+                                            </div>
+                                            <div class="tile-content">
+                                                <div class="number">17</div>
+                                                <h3>新邮件</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Carousel -->
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="carousel-tile carousel vertical slide">
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <div class="tile green">
+                                            <div class="tile-icon">
+                                                <i class="ec-users s64"></i>
+                                            </div>
+                                            <div class="tile-content">
+                                                <div class="number">325</div>
+                                                <h3>新用户</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="tile purple">
+                                            <!-- tile start here -->
+                                            <div class="tile-icon">
+                                                <i class="ec-search s64"></i>
+                                            </div>
+                                            <div class="tile-content">
+                                                <div class="number">2540</div>
+                                                <h3>查询</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="carousel-tile carousel slide">
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <div class="tile teal">
+                                            <!-- tile start here -->
+                                            <div class="tile-icon">
+                                                <i class="ec-images s64"></i>
+                                            </div>
+                                            <div class="tile-content">
+                                                <div class="number">45</div>
+                                                <h3>新图片</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="tile magenta">
+                                            <!-- tile start here -->
+                                            <div class="tile-icon">
+                                                <i class="ec-share s64"></i>
+                                            </div>
+                                            <div class="tile-content">
+                                                <div class="number">3548</div>
+                                                <h3>文章分享</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 统计结束 -->
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+    </body>
+{% endblock %}

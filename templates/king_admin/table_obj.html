@@ -1,0 +1,77 @@
+{% extends 'index.html' %}
+{% load tags %}
+{% block content %}
+    <div id="content">
+        <div class="content-wrapper">
+            <div class="row">
+                <!-- Start .row -->
+                <!-- 页面顶部 -->
+                <div class="col-lg-12 heading">
+                    <h1 class="page-header"><i class="im-screen"></i> 客户管理</h1>
+                    <ul id="crumb" class="breadcrumb">
+                    </ul>
+                    <div class="option-buttons">
+                        <div class="btn-toolbar" role="toolbar">
+                            <div class="btn-group">
+                                <a id="clear-localstorage" class="btn tip" title="Reset panels position">
+                                    <i class="ec-refresh color-red s24"></i>
+                                </a>
+                            </div>
+                            <div class="btn-group dropdown">
+                                <a class="btn dropdown-toggle" data-toggle="dropdown" id="dropdownMenu1"><i
+                                        class="br-grid s24"></i></a>
+                                <div class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1">
+                                    <div class="option-dropdown">
+                                        <div class="shortcut-button">
+                                            <a href="#">
+                                                <i class="ec-images color-dark"></i>
+                                                <span>图库</span>
+                                            </a>
+                                        </div>
+                                        <div class="shortcut-button">
+                                            <a href="#">
+                                                <i class="ec-link color-blue"></i>
+                                                <span>链接</span>
+                                            </a>
+                                        </div>
+                                        <div class="shortcut-button">
+                                            <a href="#">
+                                                <i class="ec-support color-red"></i>
+                                                <span>支持</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-body">
+                        <table class="table display dataTable" id="datatable"
+                               aria-describedby="datatable_info">
+                            <thead>
+                            <tr role="row">
+                                {% for column in admin_class.list_display %}
+{#                                    {% build_table_header_column column %}#}
+                                    <th><a href="?0={{ column }}">{% attr_name admin_class column %}</a></th>
+                                {% endfor %}
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% get_query_sets admin_class as query_sets %}
+                            {% for obj in query_sets %}
+                                <tr>
+                                    {% build_table_row obj admin_class %}
+                                </tr>
+                            {% endfor %}
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
