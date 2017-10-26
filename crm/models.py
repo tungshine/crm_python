@@ -70,8 +70,11 @@ class Role(models.Model):
 
 class Menu(models.Model):
     """菜单表"""
-    name = models.CharField(max_length=32)
-    url_name = models.CharField(max_length=64)
+    name = models.CharField(max_length=32, verbose_name="菜单名称")
+    parent = models.ForeignKey("Menu", blank=True)
+    level = models.CharField(max_length=8, blank=True, verbose_name="等级")
+    code = models.CharField(max_length=64, blank=True)
+    path = models.CharField(max_length=64, blank=True, verbose_name="链接地址")
 
     def __str__(self):
         return self.name

@@ -44,16 +44,16 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="panel-body">
-                        <div class="slimScrollDiv"
-                             style="position: relative; overflow: hidden; width: 100%; height: auto;">
-                            <div class="table-responsive" style="overflow: hidden; width: 100%; height: auto;">
-                                <div id="datatable_wrapper" class="dataTables_wrapper form-inline" role="grid">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-sm-12 text-center">
-                                            <div id="datatable_length" class="dataTables_length">
-                                                <label>
+                </div>
+                <div class="panel-body">
+                    <div class="slimScrollDiv"
+                         style="position: relative; overflow: hidden; width: 100%; height: auto;">
+                        <div class="table-responsive" style="overflow: hidden; width: 100%; height: auto;">
+                            <div id="datatable_wrapper" class="dataTables_wrapper form-inline" role="grid">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-12 text-center">
+                                        <div id="datatable_length" class="dataTables_length">
+                                            <label>
                                                     <span>
                                                         <select size="1" name="datatable_length"
                                                                 aria-controls="datatable"
@@ -64,117 +64,116 @@
                                                             <option value="100">100</option>
                                                         </select> 条
                                                     </span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 text-center">
-                                            <div class="dataTables_filter" id="datatable_filter"><label><input
-                                                    type="text" aria-controls="datatable"
-                                                    class="form-control input-large" placeholder="Search"></label></div>
+                                            </label>
                                         </div>
                                     </div>
-                                    <table class="table display dataTable" id="datatable"
-                                           aria-describedby="datatable_info">
-                                        <thead>
-                                        <tr role="row">
-                                            <th class="sorting_asc" role="columnheader" tabindex="0"
-                                                aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending"
-                                                aria-label="Rendering engine: activate to sort column descending">
-                                                编号
-                                            </th>
-                                            <th class="sorting" role="columnheader" tabindex="0"
-                                                aria-controls="datatable" rowspan="1" colspan="1"
-                                                aria-label="Browser: activate to sort column ascending">客户名称
-                                            </th>
-                                            <th class="sorting" role="columnheader" tabindex="0"
-                                                aria-controls="datatable" rowspan="1" colspan="1"
-                                                aria-label="Platform(s): activate to sort column ascending">客户地址
-                                            </th>
-                                            <th class="sorting" role="columnheader" tabindex="0"
-                                                aria-controls="datatable" rowspan="1" colspan="1"
-                                                aria-label="Engine version: activate to sort column ascending">客户头像
-                                            </th>
-                                            <th class="sorting" role="columnheader" tabindex="0"
-                                                aria-controls="datatable" rowspan="1" colspan="1"
-                                                aria-label="Engine version: activate to sort column ascending">公司名称
-                                            </th>
-                                            <th class="sorting" role="columnheader" tabindex="0"
-                                                aria-controls="datatable" rowspan="1" colspan="1"
-                                                aria-label="CSS grade: activate to sort column ascending">创建人
-                                            </th>
-                                            <th class="sorting" role="columnheader" tabindex="0"
-                                                aria-controls="datatable" rowspan="1" colspan="1"
-                                                aria-label="CSS grade: activate to sort column ascending">创建时间
-                                            </th>
-                                        </tr>
-                                        </thead>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 text-center">
+                                        <div class="dataTables_filter" id="datatable_filter"><label><input
+                                                type="text" aria-controls="datatable"
+                                                class="form-control input-large" placeholder="Search"></label></div>
+                                    </div>
+                                </div>
+                                <table class="table display dataTable" id="datatable"
+                                       aria-describedby="datatable_info">
+                                    <thead>
+                                    <tr role="row">
+                                        <th class="sorting_asc" role="columnheader" tabindex="0"
+                                            aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending"
+                                            aria-label="Rendering engine: activate to sort column descending">
+                                            编号
+                                        </th>
+                                        <th class="sorting" role="columnheader" tabindex="0"
+                                            aria-controls="datatable" rowspan="1" colspan="1"
+                                            aria-label="Browser: activate to sort column ascending">客户名称
+                                        </th>
+                                        <th class="sorting" role="columnheader" tabindex="0"
+                                            aria-controls="datatable" rowspan="1" colspan="1"
+                                            aria-label="Platform(s): activate to sort column ascending">客户地址
+                                        </th>
+                                        <th class="sorting" role="columnheader" tabindex="0"
+                                            aria-controls="datatable" rowspan="1" colspan="1"
+                                            aria-label="Engine version: activate to sort column ascending">客户头像
+                                        </th>
+                                        <th class="sorting" role="columnheader" tabindex="0"
+                                            aria-controls="datatable" rowspan="1" colspan="1"
+                                            aria-label="Engine version: activate to sort column ascending">公司名称
+                                        </th>
+                                        <th class="sorting" role="columnheader" tabindex="0"
+                                            aria-controls="datatable" rowspan="1" colspan="1"
+                                            aria-label="CSS grade: activate to sort column ascending">创建人
+                                        </th>
+                                        <th class="sorting" role="columnheader" tabindex="0"
+                                            aria-controls="datatable" rowspan="1" colspan="1"
+                                            aria-label="CSS grade: activate to sort column ascending">创建时间
+                                        </th>
+                                    </tr>
+                                    </thead>
 
-                                        <tfoot>
-                                        <tr>
-                                            <th rowspan="1" colspan="1">编号</th>
-                                            <th rowspan="1" colspan="1">客户名称</th>
-                                            <th rowspan="1" colspan="1">客户地址</th>
-                                            <th rowspan="1" colspan="1">客户头像</th>
-                                            <th rowspan="1" colspan="1">公司名称</th>
-                                            <th rowspan="1" colspan="1">创建人</th>
-                                            <th rowspan="1" colspan="1">创建时间</th>
+                                    <tfoot>
+                                    <tr>
+                                        <th rowspan="1" colspan="1">编号</th>
+                                        <th rowspan="1" colspan="1">客户名称</th>
+                                        <th rowspan="1" colspan="1">客户地址</th>
+                                        <th rowspan="1" colspan="1">客户头像</th>
+                                        <th rowspan="1" colspan="1">公司名称</th>
+                                        <th rowspan="1" colspan="1">创建人</th>
+                                        <th rowspan="1" colspan="1">创建时间</th>
+                                    </tr>
+                                    </tfoot>
+                                    <tbody role="alert" aria-live="polite" aria-relevant="all">
+                                    {% for customer in customers %}
+                                        <tr class="gradeA odd">
+                                            {# 从1开始的索引#}
+                                            <td>{{ forloop.counter }}</td>
+                                            <td class="sorting_1">
+                                                {{ customer.first_name }}{{ customer.last_name }}</td>
+                                            <td class="sorting_1">{{ customer.address }}</td>
+                                            <td class="sorting_1">{{ customer.head_url }}</td>
+                                            <td class="sorting_1">{{ customer.company }}</td>
+                                            <td class="sorting_1">{{ customer.creator }}</td>
+                                            <td class="sorting_1">
+                                                {{ customer.create_time |date:'Y-m-d H:m:s' }}
+                                            </td>
                                         </tr>
-                                        </tfoot>
-                                        <tbody role="alert" aria-live="polite" aria-relevant="all">
-                                        {% for customer in customers %}
-                                            <tr class="gradeA odd">
-                                                {# 从1开始的索引#}
-                                                <td>{{ forloop.counter }}</td>
-                                                <td class="sorting_1">
-                                                    {{ customer.first_name }}{{ customer.last_name }}</td>
-                                                <td class="sorting_1">{{ customer.address }}</td>
-                                                <td class="sorting_1">{{ customer.head_url }}</td>
-                                                <td class="sorting_1">{{ customer.company }}</td>
-                                                <td class="sorting_1">{{ customer.creator }}</td>
-                                                <td class="sorting_1">
-                                                    {{ customer.create_time |date:'Y-m-d H:m:s' }}
-                                                </td>
-                                            </tr>
-                                        {% endfor %}
-                                        </tbody>
-                                    </table>
-                                    <div class="row-">
-                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                            <div class="dataTables_info" id="datatable_info">Showing 1 to 10 of 57
-                                                entries
-                                            </div>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                                <div class="row-">
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="dataTables_info" id="datatable_info">Showing 1 to 10 of 57
+                                            entries
                                         </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                            <div class="dataTables_paginate paging_bs_full" id="datatable_paginate">
-                                                <ul class="pagination">
-                                                    <li class="disabled">
-                                                        <a tabindex="0" class="paginate_button first"
-                                                           id="datatable_first">首页</a>
-                                                    </li>
-                                                    <li class="disabled">
-                                                        <a tabindex="0" class="paginate_button previous"
-                                                           id="datatable_previous">上一页</a>
-                                                    </li>
-                                                    <li><a tabindex="0">1</a></li>
-                                                    <li><a tabindex="0">2</a></li>
-                                                    <li><a tabindex="0">3</a></li>
-                                                    <li><a tabindex="0">4</a></li>
-                                                    <li><a tabindex="0">5</a></li>
-                                                    <li><a tabindex="0" class="paginate_button next"
-                                                           id="datatable_next">下一页</a></li>
-                                                    <li><a tabindex="0" class="paginate_button last"
-                                                           id="datatable_last">最后一页</a></li>
-                                                </ul>
-                                            </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="dataTables_paginate paging_bs_full" id="datatable_paginate">
+                                            <ul class="pagination">
+                                                <li class="disabled">
+                                                    <a tabindex="0" class="paginate_button first"
+                                                       id="datatable_first">首页</a>
+                                                </li>
+                                                <li class="disabled">
+                                                    <a tabindex="0" class="paginate_button previous"
+                                                       id="datatable_previous">上一页</a>
+                                                </li>
+                                                <li><a tabindex="0">1</a></li>
+                                                <li><a tabindex="0">2</a></li>
+                                                <li><a tabindex="0">3</a></li>
+                                                <li><a tabindex="0">4</a></li>
+                                                <li><a tabindex="0">5</a></li>
+                                                <li><a tabindex="0" class="paginate_button next"
+                                                       id="datatable_next">下一页</a></li>
+                                                <li><a tabindex="0" class="paginate_button last"
+                                                       id="datatable_last">最后一页</a></li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="slimScrollBar ui-draggable"
-                                 style="background: rgb(153, 153, 153); height: 5px; position: absolute; bottom: 3px; opacity: 0.4; display: none; border-radius: 5px; z-index: 99; width: 1230px; left: 0px;"></div>
-                            <div class="slimScrollRail"
-                                 style="width: 100%; height: 5px; position: absolute; bottom: 3px; display: none; border-radius: 5px; background: rgb(51, 51, 51); opacity: 0.5; z-index: 90;"></div>
                         </div>
+                        <div class="slimScrollBar ui-draggable"
+                             style="background: rgb(153, 153, 153); height: 5px; position: absolute; bottom: 3px; opacity: 0.4; display: none; border-radius: 5px; z-index: 99; width: 1230px; left: 0px;"></div>
+                        <div class="slimScrollRail"
+                             style="width: 100%; height: 5px; position: absolute; bottom: 3px; display: none; border-radius: 5px; background: rgb(51, 51, 51); opacity: 0.5; z-index: 90;"></div>
                     </div>
                 </div>
             </div>

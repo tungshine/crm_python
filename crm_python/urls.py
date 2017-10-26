@@ -21,8 +21,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index),
     url(r'^role/', views.roles),
-    url(r'^customer/', views.customers),
-    url(r'^customer/add', views.add_customer),
+    url(r'^customer/list/', views.customers),
+    url(r'^customer/add/', views.add_customer),
     url(r'^king_admin/', include('king_admin.urls')),
 
 ]

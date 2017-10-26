@@ -46,6 +46,46 @@
                     </div>
 
                 </div>
+                <form class="form-horizontal group-border hover-stripped" role="form" action="" method="post">
+                    <div class="form-group">
+                        <label class="col-lg-2 col-md-2 col-sm-12 control-label">姓</label>
+                        <div class="col-lg-10 col-md-10">
+                            {{ customer.first_name }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 col-md-2 col-sm-12 control-label">名</label>
+                        <div class="col-lg-10 col-md-10">
+                            {{ customer.last_name }}
+                        </div>
+                    </div>
+                    <!-- End .form-group  -->
+                    <div class="form-group">
+                        <label class="col-lg-2 col-md-2 col-sm-12 control-label">联系地址</label>
+                        <div class="col-lg-10 col-md-10">
+                            {{ customer.address }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 col-md-2 col-sm-12 control-label">头像</label>
+                        <div class="col-lg-10 col-md-10">
+                            {{ customer.head_url }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 col-md-2 col-sm-12 control-label">公司名称</label>
+                        <div class="col-lg-10 col-md-10">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    {{ customer.company }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" align="center">
+                        <button class="btn btn-primary">提交</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

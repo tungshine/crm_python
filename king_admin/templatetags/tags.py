@@ -18,6 +18,7 @@ def render_app_name(admin_class):
 def attr_name(admin_class, attr):
     # print(admin_class.model._meta.object_name)
     # print(admin_class.model._meta.fields)
+    # django通过app模块获取object
     model_obj = apps.get_model(admin_class.model._meta.app_label, admin_class.model._meta.object_name)
     # print(model_obj._meta.fields)
     for field in model_obj._meta.fields:

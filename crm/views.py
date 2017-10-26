@@ -13,8 +13,9 @@ def customers(request):
 
 
 def add_customer(request):
-    Customer(request.POST)
-    pass
+    from crm import crmfomrs
+    customer = crmfomrs.CustomerForm()
+    return render(request, 'customer/customer-add.html', {'customer': customer})
 
 
 def roles(request):
