@@ -9,7 +9,10 @@ enabled_admins = {}
 
 class BaseAdmin(object):
     list_display = []
-    list_filter = []
+    list_filters = []
+    search_fields = []
+    list_per_page = 2
+    ordering = None
 
 
 class UserAdmin(BaseAdmin):
@@ -17,7 +20,9 @@ class UserAdmin(BaseAdmin):
 
 
 class CustomerAdmin(BaseAdmin):
-    list_display = ['first_name', 'last_name', 'address', 'creator', 'create_time']
+    list_display = ['id', 'first_name', 'last_name', 'address', 'creator', 'create_time']
+    list_filters = ['id', 'first_name', 'last_name', 'address']
+    search_fields = ['first_name', 'last_name', 'address']
 
 
 def register(model_class, admin_class=None):

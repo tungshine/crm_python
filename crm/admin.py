@@ -7,9 +7,10 @@ from crm import models
 class CustomerAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'creator')
     # list_filter = ('source', 'consultant', 'data')
-    # search_fields = ('consultant')
+    search_fields = ('first_name',)
     # filter_horizontal = ('tags')
     # list_editable = ('status')
+    list_per_page = 5
     pass
 
 

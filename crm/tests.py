@@ -26,7 +26,7 @@ def test2():
     print(time.strftime('%Y-%m-%d %H:%M:%S', struct_time))  # 自定义时间格式
 
 
-# test2()
+test2()
 
 
 print('ssss'.strip('-'))
