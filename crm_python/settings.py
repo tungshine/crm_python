@@ -23,10 +23,9 @@ SECRET_KEY = 'v2zqon=pov0!9jux&em_7ue#x%3a&6hy0qqoksr)0agonh#3hx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # 配置服务器地址为固定ip地址时，需要在ALLOWED_HOSTS列表中添加该ip地址
-DEBUG = True
 ALLOWED_HOSTS = [
-    '192.168.1.7',
     '127.0.0.1',
+    '192.168.1.7',
 ]
 
 # Application definition
