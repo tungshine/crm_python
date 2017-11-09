@@ -46,7 +46,6 @@
                         </div>
                     </div>
 
-                    {{ table_list }}
                     <div class="panel-body">
 
                         {% for app_name, app_tables in table_list.items %}
@@ -63,8 +62,11 @@
                                         <td>
                                             <a href="{% url 'table_obj' app_name app_table_name %}">{% render_app_name admin %}</a>
                                         </td>
-                                        <td>add</td>
-                                        <td>delete</td>
+                                        <td><a href="{{ request.path }}{{ app_name }}/{{ app_table_name }}/add">
+                                            <li class="en-plus3"></li>新增</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <a href="{{ request.path }}{{ app_name }}/{{ app_table_name }}">
+                                            <li class="fa-edit"></li>修改
+                                        </a></td>
                                     </tr>
                                 {% endfor %}
                                 </tbody>

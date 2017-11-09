@@ -13,8 +13,6 @@ def table_filter(request, admin_class):
             continue
         if v:
             filter_conditions[k] = v
-    print("filter coditions", filter_conditions)
-
     return admin_class.model.objects.filter(**filter_conditions).order_by(
         "-%s" % admin_class.ordering if admin_class.ordering else   "-id"), filter_conditions
 

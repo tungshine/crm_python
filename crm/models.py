@@ -7,7 +7,7 @@ class Customer(models.Model):
     """客户表"""
     first_name = models.CharField(max_length=32, null=True, verbose_name="姓")
     last_name = models.CharField(max_length=32, null=True, verbose_name="名")
-    address = models.CharField(max_length=128, null=True, verbose_name="地址")
+    address = models.TextField(null=True, verbose_name="地址")
     head_url = models.CharField(max_length=128, null=True, verbose_name="头像")
 
     create_time = models.DateTimeField(verbose_name="创建时间", null=True, auto_now_add=True)
@@ -20,8 +20,8 @@ class Customer(models.Model):
         return self.first_name + self.last_name
 
     class Meta:
-        verbose_name = "客户表"
-        verbose_name_plural = "客户表"
+        verbose_name = "客户"
+        verbose_name_plural = "客户"
 
 
 class Company(models.Model):
@@ -33,12 +33,12 @@ class Company(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "单位表"  # 将表名设置为中文，但是在中文表名后面有个“单位表s”表示复数，用下面就可以把复数去掉
-        verbose_name_plural = "单位表"
+        verbose_name = "单位"  # 将表名设置为中文，但是在中文表名后面有个“单位表s”表示复数，用下面就可以把复数去掉
+        verbose_name_plural = "单位"
 
 
 class User(models.Model):
-    """用户表"""
+    """用户"""
     name = models.CharField(max_length=32, unique=True, verbose_name="用户名称")
     head_url = models.CharField(max_length=128, null=True, verbose_name="头像")
 
@@ -48,8 +48,8 @@ class User(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "用户表"
-        verbose_name_plural = "用户表"
+        verbose_name = "用户"
+        verbose_name_plural = "用户"
 
 
 class Role(models.Model):
@@ -64,8 +64,8 @@ class Role(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "角色表"
-        verbose_name_plural = "角色表"
+        verbose_name = "角色"
+        verbose_name_plural = "角色"
 
 
 class Menu(models.Model):
@@ -80,5 +80,5 @@ class Menu(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "菜单表"
-        verbose_name_plural = "菜单表"
+        verbose_name = "菜单"
+        verbose_name_plural = "菜单"

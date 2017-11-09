@@ -33,10 +33,20 @@ def get_query_sets(admin_class):
 
 
 @register.simple_tag
-def build_table_row(obj, admin_class):
+def build_table_row(request, obj, admin_class):
     row_ele = ""
-    for column in admin_class.list_display:
+    for index, column in enumerate(admin_class.list_display):
+        # field_obj = obj._meta.get_field(column)  # 获取obj(Customer)对象中属性的对象
+
         column_value = getattr(obj, column)  # 通过反射去对象的值
+
+        if type(column_value).__name__ == 'datetime':  # 判断字段类型
+            column_value = column_value.strftime('%Y-%m-%d %H:%M:%S')
+
+        if index == 0:
+            column_value = '<a href="{path}/{obj_id}/change">{column_value}</a>'.format(path=request.path,
+                                                                                        obj_id=obj.id,
+                                                                                        column_value=column_value)
         row_ele += str(column_value).join(('<td>', '</td>'))
     return mark_safe(row_ele)
 
@@ -45,7 +55,7 @@ def build_table_row(obj, admin_class):
 def render_page_ele(loop_counter, query_sets):
     current_page = query_sets.number
     total_page = query_sets.paginator.num_pages
-    print(current_page, loop_counter)
+    # print(current_page, loop_counter)
     if loop_counter < 3 or loop_counter > total_page - 2:  # 前2页or最后2页
         ele_class = ''
         if query_sets.number == loop_counter:
@@ -64,7 +74,7 @@ def render_page_ele(loop_counter, query_sets):
 
 
 @register.simple_tag
-def build_paginators(query_sets):
+def build_paginators(query_sets, search_value):
     """返回整个分页元素"""
     page_btns = ''
     added_dot_ele = False
@@ -75,8 +85,8 @@ def build_paginators(query_sets):
             if query_sets.number == page_num:
                 added_dot_ele = False
                 ele_class = "active"
-            page_btns += '''<li class="%s"><a href="?page=%s">%s</a></li>''' % (
-                ele_class, page_num, page_num)
+            page_btns += '''<li class="%s"><a href="?page=%s&_q=%s">%s</a></li>''' % (
+                ele_class, page_num, search_value, page_num)
         # elif abs(query_sets.number - page_num) <= 1: #判断前后1页
         #     ele_class = ""
         #     if query_sets.number == page_num:
@@ -90,3 +100,16 @@ def build_paginators(query_sets):
                 added_dot_ele = True
 
     return mark_safe(page_btns)
+
+
+@register.simple_tag
+def create_field(field, form_obj):
+    pass
+    # form_obj._meta.model
+    # print(field)
+
+
+@register.simple_tag
+def get_model_name(admin_class):
+    model_name = admin_class.model._meta.verbose_name
+    return model_name

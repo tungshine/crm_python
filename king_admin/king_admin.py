@@ -11,7 +11,7 @@ class BaseAdmin(object):
     list_display = []
     list_filters = []
     search_fields = []
-    list_per_page = 2
+    list_per_page = 10
     ordering = None
 
 
@@ -22,7 +22,7 @@ class UserAdmin(BaseAdmin):
 class CustomerAdmin(BaseAdmin):
     list_display = ['id', 'first_name', 'last_name', 'address', 'creator', 'create_time']
     list_filters = ['id', 'first_name', 'last_name', 'address']
-    search_fields = ['first_name', 'last_name', 'address']
+    search_fields = ['first_name', 'last_name', 'address', 'creator__name']
 
 
 def register(model_class, admin_class=None):

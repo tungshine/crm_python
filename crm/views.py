@@ -11,10 +11,10 @@ def index(request):
 
 def customers(request):
     customer_set = Customer.objects.all()
-    page = Paginator()
-    search_value = request.GET.get('_q', "")
-    q = Q()
-    q.connector = 'OR'
+    # page = Paginator()
+    # search_value = request.GET.get('_q', "")
+    # q = Q()
+    # q.connector = 'OR'
     return render(request, 'customer/customer-list.html', {"customers": customer_set})
 
 

@@ -45,59 +45,27 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="panel-heading">
-                    <h3 class="panel-title">
-                        {% get_model_name admin_class %}列表
-                    </h3>
-                    <a href="{{ request.path }}/add" class="pull-right"
-                       style="padding-top: 9px;padding-right: 50px"><li class="br-plus">&nbsp;新增{% get_model_name admin_class %}</li></a>
-                </div>
-                <div class="panel-body">
-                    <div class="row">
-                        <form class="" method="get">
-                            <div class="row">
-                                <div class="col-lg-2">
-                                    <input type="search" name="_q" class="form-control" style="margin-left:15px"
-                                           value="{{ search_value }}" placeholder="search">
+                    <div class="panel-body">
+                        <form class="form-horizontal group-border hover-stripped" role="form" action="" method="post">
+                            {% csrf_token %}
+                            <span style="color: red">{{ form_obj.errors }}</span>
+                            {% for field in form_obj %}
+                                <div class="form-group">
+                                    <label class="col-lg-2 col-md-2 col-sm-12 control-label">{{ field.label }}</label>
+                                    <div class="col-lg-8 col-md-8">
+                                        {{ field }}
+                                        {#                                                {% create_field field form_obj %}#}
+                                    </div>
                                 </div>
-                                <div class="col-lg-2">
-                                    <button type="SUBMIT" class="btn btn-success">search</button>
+                            {% endfor %}
+                            <div class="form-group pull-right">
+                                <div class="col-lg-8 col-md-8">
+                                    <button class="btn btn-lg btn-primary">提交</button>
                                 </div>
                             </div>
                         </form>
-                    </div>
-                    <hr>
 
-                    <table class="table display dataTable" id="datatable"
-                           aria-describedby="datatable_info">
-                        <thead>
-                        <tr role="row">
-                            {% for column in admin_class.list_display %}
-                                {#                                    {% build_table_header_column column %}#}
-                                <th><a href="?0={{ column }}">{% attr_name admin_class column %}</a></th>
-                            {% endfor %}
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {#                            {% get_query_sets admin_class as query_sets %}#}
-                        {% for obj in query_sets %}
-                            <tr>
-                                {% build_table_row request obj admin_class %}
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-12">
-                            <div class="dataTables_paginate paging_bs_full" id="datatable_paginate">
-                                <ul class="pagination">
-                                    {% build_paginators query_sets search_value %}
-                                </ul>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
