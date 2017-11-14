@@ -1,7 +1,6 @@
 # __author: TungShine
 # __date: 2017/10/23
 # __description:
-from datetime import datetime, timedelta
 
 from django import template
 from django.apps import apps
@@ -113,3 +112,11 @@ def create_field(field, form_obj):
 def get_model_name(admin_class):
     model_name = admin_class.model._meta.verbose_name
     return model_name
+
+
+@register.simple_tag
+def build_operate_column(request, obj):
+    column_ele = '<td><a href="{path}/{id}/change"><li class="fa-edit"></li></a>' \
+                 '<a href="{path}/{id}/delete"><li class="fa-trash"></li></a></td>'.format(path=request.path,
+                                                                                           id=obj.id)
+    return mark_safe(column_ele)

@@ -52,7 +52,9 @@
                         {% get_model_name admin_class %}列表
                     </h3>
                     <a href="{{ request.path }}/add" class="pull-right"
-                       style="padding-top: 9px;padding-right: 50px"><li class="br-plus">&nbsp;新增{% get_model_name admin_class %}</li></a>
+                       style="padding-top: 9px;padding-right: 50px">
+                        <li class="br-plus">&nbsp;新增{% get_model_name admin_class %}</li>
+                    </a>
                 </div>
                 <div class="panel-body">
                     <div class="row">
@@ -78,6 +80,7 @@
                                 {#                                    {% build_table_header_column column %}#}
                                 <th><a href="?0={{ column }}">{% attr_name admin_class column %}</a></th>
                             {% endfor %}
+                            <th>操作</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -85,6 +88,7 @@
                         {% for obj in query_sets %}
                             <tr>
                                 {% build_table_row request obj admin_class %}
+                                {% build_operate_column request obj %}
                             </tr>
                         {% endfor %}
                         </tbody>
